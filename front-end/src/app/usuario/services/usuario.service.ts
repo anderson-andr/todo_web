@@ -7,7 +7,7 @@ import { AuthService } from '../../../../auth.service';
   providedIn: 'root',
 })
 export class UsuarioService {
-  private readonly API = 'http://localhost:3000/api/user';
+  private readonly API = 'http://18.230.117.170:3000/api/user';
   constructor(
     private httpClient: HttpClient,
     private authservice: AuthService
