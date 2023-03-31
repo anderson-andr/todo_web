@@ -1,3 +1,5 @@
 
 front-end/node_modules/
 Back-End/node_modules/
+*.pack
+front-end/.angular/cache/
