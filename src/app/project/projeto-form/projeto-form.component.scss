@@ -1,0 +1,48 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 15px;
+  box-shadow: none;
+  border: #d9d9d9 1px solid;
+}
+
+mat-toolbar  {
+  display: flex;
+  justify-content: center;
+}
+
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+form {
+  display: block;
+  width: 80%;
+  margin: 5px;
+
+}
+
+
+.full-width {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+
+}
+
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

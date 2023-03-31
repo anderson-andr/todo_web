@@ -1,0 +1,40 @@
+
+
+<p>
+  <mat-toolbar class="toolbar">
+    <span>Olá, {{ Usuario.name | titlecase }} </span>
+    <span>Horário: {{dataHoraLocal}}</span>
+  </mat-toolbar>
+</p>
+
+<div class="container">
+  <mat-card>
+    <mat-card-header >
+      <mat-card-title>Projetos</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions   >
+      <button   routerLink="/projeto"   class="btn" mat-button>Acessar</button>
+    </mat-card-actions>
+  </mat-card>
+
+
+  <mat-card>
+    <mat-card-header >
+      <mat-card-title>Tarefas</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions   >
+      <button  class="btn" mat-button>Acessar</button>
+    </mat-card-actions>
+  </mat-card>
+
+
+  <mat-card>
+    <mat-card-header >
+      <mat-card-title>Relatórios</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions   >
+      <button  class="btn" mat-button>Acessar</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

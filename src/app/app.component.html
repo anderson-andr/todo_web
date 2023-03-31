@@ -1,0 +1,28 @@
+<mat-toolbar class="menu" color="primary">
+  <span>To Do List </span>
+  <Nav >
+    <ul class="nav">
+      <li>
+        <div *ngIf="onDeslogado()">
+        <button mat-button routerLink="/cadastro" >Cadastre-se</button>
+        </div>
+        <div  *ngIf="onLogado()," >
+          <button mat-button routerLink="/usuario/conta" *ngIf="!isConta">Conta</button>
+        </div>
+        <div *ngIf="onLogado(),">
+          <button routerLink="/usuario"  mat-button  *ngIf="isConta" >Volta</button>
+        </div>
+      </li>
+      <li>
+        <div *ngIf="onDeslogado()">
+          <button (click)="onLogin()" mat-button>Login</button>
+        </div>
+        <div *ngIf="onLogado()">
+          <button mat-button (click)="deslogar()">Sair</button>
+        </div>
+      </li>
+    </ul>
+  </Nav>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

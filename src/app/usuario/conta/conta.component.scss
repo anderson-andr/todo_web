@@ -1,0 +1,32 @@
+.container  {
+  width: 80%;
+  margin: 5px auto;
+
+}
+.table {
+  width: 100%;
+
+}
+
+th, mat-header-cell, mat-cell {
+  height: 60px;
+ }
+td {
+  padding: 10px;
+
+}
+
+.loading-spinner {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.15);
+
+}
+
+
+
+
+
+
