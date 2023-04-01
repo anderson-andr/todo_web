@@ -11,8 +11,6 @@ import { User } from '../model/login';
 export class LoginService {
   private readonly API = 'https://18.230.117.170:3001/api/login';
   constructor( private httpClient: HttpClient) { }
-
-
   list (){
     return this.httpClient.get <User[]>(this.API)
     .pipe
