@@ -13,13 +13,14 @@ import { User } from './src/app/login/model/login';
 export class AuthService {
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
   public readonly TOKEN_NAME = 'x-auth-token'
+  public readonly USER_ID   = 'usuario'
   isLoggedIn$ = this._isLoggedIn$.asObservable();
 
 
   constructor(private apiService: ApiService,
     private router: Router ) {
     const token = localStorage.getItem(this.TOKEN_NAME);
-    const user =  localStorage.getItem('User')
+    const user =  localStorage.getItem(this.USER_ID)
     this._isLoggedIn$.next(!!token);
     console.log(token);
 
@@ -32,7 +33,7 @@ export class AuthService {
   }
 
   get Usuario () {
-    return JSON.parse((JSON.stringify(localStorage.getItem('Usuario'))));
+    return JSON.parse((JSON.stringify(localStorage.getItem(this.USER_ID))));
 
 
   }
@@ -47,7 +48,7 @@ export class AuthService {
         console.log(token)
         let user =JSON.parse(JSON.stringify(response)).user;
         window.localStorage.setItem(this.TOKEN_NAME, token)
-        window.localStorage.setItem('Usuario',user)
+        window.localStorage.setItem(this.USER_ID,user)
         console.log( window.localStorage.getItem(this.TOKEN_NAME))
 
 
@@ -59,6 +60,7 @@ export class AuthService {
   }
   deslogar() {
     localStorage.removeItem(this.TOKEN_NAME);
+    localStorage.removeItem(this.USER_ID);
     this.router.navigate(['login']);
 }
   getAuthorizationToken() {
