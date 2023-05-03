@@ -7,7 +7,7 @@ import { Usuario } from '../../usuario/model/usuario';
   providedIn: 'root'
 })
 export class RegisterService {
-  private readonly API = 'https://18.230.117.170:3001/api/register';
+  private readonly API = 'https://18.230.156.247:3001/api/register';
   constructor( private httpClient: HttpClient) {
 
   }

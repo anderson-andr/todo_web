@@ -9,7 +9,7 @@ import { User } from '../model/login';
   providedIn: 'root'
 })
 export class LoginService {
-  private readonly API = 'https://18.230.117.170:3001/api/logi';
+  private readonly API = 'https://18.230.156.247:3001/api/logi';
   constructor( private httpClient: HttpClient) { }
   list (){
     return this.httpClient.get <User[]>(this.API)
