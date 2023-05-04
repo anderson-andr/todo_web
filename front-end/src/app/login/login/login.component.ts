@@ -30,7 +30,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.localStorage.removeItem(this.authService.TOKEN_NAME);
+    window.localStorage.removeItem(this.authService.USER_ID);
+  }
 
   onLogar() {
     if (

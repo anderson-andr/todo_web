@@ -21,7 +21,9 @@ export class AppComponent implements OnInit {
     public authService: AuthService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   onLogado() {
     if (this.authService.isUserLoggedIn()) {
@@ -40,8 +42,6 @@ export class AppComponent implements OnInit {
   }
   onLogin() {
     this.router.navigate(['login'], { relativeTo: this.route });
-    window.localStorage.removeItem(this.authService.TOKEN_NAME);
-    window.localStorage.removeItem(this.authService.Usuario);
     console.log(this.onDeslogado());
   }
   onCadastro() {
