@@ -11,11 +11,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { TaskFormComponent } from './task-form/task-form/task-form.component';
 
 
 @NgModule({
   declarations: [
-    TaskComponent
+    TaskComponent,
+    TaskFormComponent
   ],
   imports: [
     CommonModule,

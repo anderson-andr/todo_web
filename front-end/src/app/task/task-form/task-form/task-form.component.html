@@ -1,0 +1,33 @@
+
+<div class="container">
+  <mat-card>
+    <mat-toolbar >Detalhes da Tarefa</mat-toolbar>
+    <mat-card-content>
+      <form [formGroup]="form" class="min-width">
+        <mat-form-field class="full-width">
+          <mat-label>NOME</mat-label>
+          <input matInput placeholder="Nome" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Atualização</mat-label>
+          <input matInput placeholder="Atualização" formControlName="updatedAt">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Criação</mat-label>
+          <input matInput placeholder="Criação" formControlName="createdAt">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Descrição</mat-label>
+          <textarea name="" id="" cols="20" rows="6" matInput placeholder="Descrição" formControlName="description"></textarea>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+      <button mat-raised-button (click)="onCancel()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+  </div>

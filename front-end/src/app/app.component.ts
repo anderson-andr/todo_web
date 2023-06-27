@@ -42,6 +42,10 @@ export class AppComponent implements OnInit {
   }
   onLogin() {
     this.router.navigate(['login'], { relativeTo: this.route });
+    window.localStorage.removeItem(this.authService.TOKEN_NAME);
+    window.localStorage.removeItem(this.authService.USER_ID);
+    window.localStorage.removeItem('projeto')
+    window.localStorage.removeItem('Usuario')
     console.log(this.onDeslogado());
   }
   onCadastro() {
