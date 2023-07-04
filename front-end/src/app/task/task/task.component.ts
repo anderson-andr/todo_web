@@ -50,6 +50,7 @@ export class TaskComponent implements OnInit {
 
   onEdit(task:Task) {
     this.router.navigate(['editar', task.id], {relativeTo:this.route});
+    console.log(task.name)
   }
 
   Add() {

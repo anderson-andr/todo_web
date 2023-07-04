@@ -17,11 +17,25 @@
           <mat-label>Criação</mat-label>
           <input matInput placeholder="Criação" formControlName="createdAt">
         </mat-form-field>
-
+        <mat-form-field class="full-width">
+          <mat-label>Prazo</mat-label>
+          <input type="date" matInput placeholder="Prazo" formControlName="deadline">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Observação</mat-label>
+          <textarea name="" id="" cols="20" rows="6" matInput placeholder="Observação" formControlName="notes"></textarea>
+        </mat-form-field>
         <mat-form-field class="full-width">
           <mat-label>Descrição</mat-label>
           <textarea name="" id="" cols="20" rows="6" matInput placeholder="Descrição" formControlName="description"></textarea>
         </mat-form-field>
+        <div class="checkbox-container">
+            <input type="checkbox" class="checkbox-input" id="myCheckbox" [(ngModel)]="isChecked" formControlName="completed"  (change)="onCheckboxChange()">
+            <label for="myCheckbox" class="checkbox-custom"></label>
+            <span class="checkbox-label">Finalizado?</span>
+        </div>
+
+
       </form>
     </mat-card-content>
 

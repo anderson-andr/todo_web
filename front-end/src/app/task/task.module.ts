@@ -12,16 +12,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { TaskFormComponent } from './task-form/task-form/task-form.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
     TaskComponent,
     TaskFormComponent
+
   ],
   imports: [
     CommonModule,
     TaskRoutingModule,
+
     AppMaterialModule,
     SharedModule,
     FormsModule,
@@ -30,7 +32,10 @@ import { TaskFormComponent } from './task-form/task-form/task-form.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCheckboxModule,
+
   ]
 })
-export class TaskModule { }
+export class TaskModule {
+  }

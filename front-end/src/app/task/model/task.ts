@@ -7,6 +7,6 @@ export interface Task {
     createdAt: Date,
     updatedAt:Date,
     deadline:Date,
-    id_Project :number
+    id_project :number
 
 }

@@ -1,20 +1,25 @@
-import { DatePipe, Location} from '@angular/common';
-import { Component } from '@angular/core';
+import { DatePipe, Location } from '@angular/common';
+
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'auth.service';
-import { TaskService } from '../../services/task.service';
+
+
 import { Task } from '../../model/task';
-import { ProjetoFormComponent } from '../../../project/projeto-form/projeto-form.component';
+import { TaskService } from '../../services/task.service';
+import { Component , OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-task-form',
   templateUrl: './task-form.component.html',
-  styleUrls: ['./task-form.component.scss']
+  styleUrls: ['./task-form.component.scss'],
+
 })
-export class TaskFormComponent {
+export class TaskFormComponent implements OnInit{
   form: FormGroup;
+  task: Task | undefined;
+  isChecked: boolean = false;
 
   constructor( private formBuilder: FormBuilder,
     private service: TaskService,
@@ -28,7 +33,6 @@ export class TaskFormComponent {
       const formattedDate = new DatePipe('en-US').transform(date, 'dd/MM/yyyy HH:mm:ss');
       const projeto = window.localStorage.getItem('projeto')
       this.form = this.formBuilder.group( {
-
           id:[null],
           name:[null],
           description:[null],
@@ -37,40 +41,56 @@ export class TaskFormComponent {
           notes:[null],
           completed:[null],
           deadline:[null],
-          id_Project : projeto
-      
+          id_project : projeto
+
 
       });
 
   }
+  ngOnInit() {
+    this.task = this.route.snapshot.data['tarefa'];
+    const projeto = window.localStorage.getItem('projeto')
+    // Acesse as propriedades de this.task
+    if (this.task) {
+      this.form.setValue ({
+        id:this.task.id,
+        name:this.task.name,
+        description:this.task.description,
+        createdAt:this.task.createdAt,
+        updatedAt:this.task.updatedAt,
+        notes:this.task.notes,
+        completed:this.task.completed,
+        deadline:this.task.deadline,
+        id_project :projeto
 
-  ngOnInit()  {
-    const task: Task[]  = this.route.snapshot.data['task'];
-    const createdAt = new DatePipe('en-US').transform(task[0].createdAt, 'dd/MM/yyyy HH:mm:ss');
-    const updatedAt = new DatePipe('en-US').transform(task[0].updatedAt, 'dd/MM/yyyy HH:mm:ss');
-    const deadline = new DatePipe('en-US').transform(task[0].deadline, 'dd/MM/yyyy HH:mm:ss');
-    this.form.setValue ({
-      id:task[0].id,
-      name:task[0].name,
-      description:task[0].description,
 
-      id_User:this.authService.USER_ID,
-      createdAt:createdAt,
-      updatedAt:updatedAt,
-      notes:task[0].notes,
-      completed:task[0].completed,
-      deadline:deadline,
-      id_Project :task[0].id_Project
-    })
-      console.log('ID do task:', task[0].id)
+      })
+      console.log('ID do tarefa:', this.task.id)
+      if (this.task.completed) {
+        this.isChecked = this.task.completed;
+      }
+    }
+
   }
 
-  onSubmit (){
+
+
+
+  onCheckboxChange(){
+    if (this.isChecked) {
+      console.log(this.isChecked);
+    } else {
+      console.log(this.isChecked);
+    }
+  }
+
+
+ onSubmit (){
     this.service.save(this.form.value)
     .subscribe( result => this.onSucess(), error => this.onError());
+  }
 
 
- }
  onCancel() {
   this.location.back();
 
@@ -78,11 +98,11 @@ export class TaskFormComponent {
  }
 
  private onSucess(){
-  this.snackBar.open('Serviço salvo com sucesso!','',{duration:5000});
+  this.snackBar.open('Tarefa salvo com sucesso!','',{duration:5000});
   this.onCancel();
  }
  private onError () {
-  this.snackBar.open('Erro ao salvar serviço','',{duration:5000});
+  this.snackBar.open('Erro ao salvar Tarefa','',{duration:5000});
  }
 
 
