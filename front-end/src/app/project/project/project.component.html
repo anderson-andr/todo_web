@@ -1,9 +1,9 @@
 <div class="container">
   <mat-card >
     <mat-toolbar color="primary" >
-      <span>Projetos Cadastradoss</span >
+      <span>Projetos Cadastrados</span >
     </mat-toolbar>
-    <div *ngIf="project$ | async as projetos; else loading " >
+    <div *ngIf="project$ | async as projetos; else loading " class="tabela_container">
       <table mat-table [dataSource]="projetos" class="mat-elevation-z8">
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Nome </th>
@@ -40,7 +40,7 @@
           <mat-menu #menu="matMenu">
             <button mat-menu-item  (click)="onTask(projeto)">
               <mat-icon>task</mat-icon>
-              <span>Tarefas</span>
+              <span class="tarefa">Tarefas</span>
             </button>
           </mat-menu>
         </mat-cell>

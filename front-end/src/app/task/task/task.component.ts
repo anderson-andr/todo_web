@@ -82,4 +82,8 @@ export class TaskComponent implements OnInit {
     return dataAtual >= prazo;
   }
 
+  onback () {
+    this.router.navigate(['projeto'], {relativeTo:this.route});
+  }
+
 }

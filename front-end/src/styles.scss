@@ -15,7 +15,8 @@ $custom-theme: mat-light-theme($custom-app-primary,$custom-app-secondary,$custom
 @include angular-material-theme($custom-theme);
 html, body { height: 100%; }
 body { margin: 0;
-       font-family: 'Roboto Condensed', sans-serif; }
+       font-family: 'Roboto Condensed', sans-serif;
+      background-color:  #f2f2f2;}
 
 
 

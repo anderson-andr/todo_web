@@ -3,7 +3,7 @@
     <mat-toolbar color="primary" >
       <span class="toolbar">Tarefas Cadastradas</span>
     </mat-toolbar>
-    <div *ngIf="task$ | async as tarefas; else loading "  >
+    <div *ngIf="task$ | async as tarefas; else loading "  class="tabela_container" >
       <table mat-table [dataSource]="tarefas" class="mat-elevation-z8">
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Nome </th>
@@ -20,8 +20,8 @@
         <ng-container matColumnDef="completed">
           <th mat-header-cell *matHeaderCellDef> Completo </th>
           <td mat-cell *matCellDef="let tarefas">
-            <span *ngIf="tarefas.completed">Sim</span>
-            <span *ngIf="!tarefas.completed">Não</span>
+            <span *ngIf="tarefas.completed" class="completo">Sim</span>
+            <span *ngIf="!tarefas.completed"  class="completo">Não</span>
           </td>
         </ng-container >
         <ng-container matColumnDef="deadline" >
@@ -31,8 +31,8 @@
         <ng-container matColumnDef="vencido" >
           <th mat-header-cell *matHeaderCellDef> Vencido</th>
           <td mat-cell *matCellDef="let tarefas">
-            <span *ngIf="isPrazoEsgotado(tarefas.dealine)">Sim</span>
-            <span *ngIf="!isPrazoEsgotado(tarefas.dealine)">Não</span>
+            <span *ngIf="isPrazoEsgotado(tarefas.dealine)" class="completo">Sim</span>
+            <span *ngIf="!isPrazoEsgotado(tarefas.dealine)"  class="completo">Não</span>
           </td>
         </ng-container >
         <ng-container matColumnDef="createdAt" >
@@ -72,6 +72,7 @@
         </div>
     </ng-template>
   </mat-card>
-  <button> Voltar </button>
-
+  <div class="button_voltar">
+    <button routerLink="/projeto"  color="primary"> Voltar </button>
+  </div>
 </div>

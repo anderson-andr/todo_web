@@ -1,69 +1,54 @@
-.mat-card{
-  max-width: 60%;
-  margin: 1em auto;
-  text-align: center;
-  margin-top: 5px;
-  padding: 0px;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  box-shadow: none;
-}
-
-.title
- {
- display: flex;
- width: 100%;
- justify-content: center;
-
- }
-
-
-
-
-
-
-.min-width {
-  width: 100%;
-  min-width: 150px;
-}
-
-.mat-label  {
-  color:rgb(218, 212, 212);
-}
-.mat-option {
-  color:rgb(184, 183, 183);
-}
-
-mat-card-content {
-  padding:20px;
-  margin: 0 auto;
-  width: 80%;
+.container {
+  padding: 20px;
+  width: 60%;
+  margin: 50px auto;
   display: flex;
-  align-items: center;
+  text-align: center;
+  justify-items: center;
   justify-content: center;
+  border-radius: 50px;
+  background-color: white;
 }
 
-.form {
-  width: 50%;
+mat-toolbar.title {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #f2f2f2;
+
+
 }
+
+form.form {
+  margin-top: 20px;
+}
+
+form.min-width {
+  display: block;
+  margin: 30px auto;
+
+}
+
 .full-width {
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 5px;
-  border-radius: 8px;
- }
-mat-card-actions {
-  padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  width: 90%;
+  margin: 0 auto;
 
 }
 
-.mat-mdc-card
-{
-  border: none;
-  box-shadow: none;
+mat-card-actions {
+  display: flex;
+  width: 80;
+  text-align: center;
+  justify-content: center;
+
+}
+
+button {
+  margin :5px;
 }
