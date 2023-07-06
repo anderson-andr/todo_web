@@ -38,6 +38,7 @@ td {
   padding: 10px;
   font-size: 14px;
   color: #404040;
+  height: 70px;
 }
 th, mat-header-cell, mat-cell {
   height: 70px;
@@ -46,11 +47,13 @@ th, mat-header-cell, mat-cell {
 }
 
 span.completo {
+  padding: 10px;
   font-size: 14px;
   color: #404040;
+  height: 70px;
 }
 div.button_voltar {
-  margin-top: 40px;
+  margin-top: 25px;
   width: 100%;
   justify-content: center;
   align-items: center;
