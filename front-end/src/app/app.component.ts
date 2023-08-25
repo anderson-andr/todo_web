@@ -50,6 +50,10 @@ export class AppComponent implements OnInit {
   }
   onCadastro() {
     this.router.navigate(['cadastro'], { relativeTo: this.route });
+    window.localStorage.removeItem(this.authService.TOKEN_NAME);
+    window.localStorage.removeItem(this.authService.USER_ID);
+    window.localStorage.removeItem('projeto')
+    window.localStorage.removeItem('Usuario')
   }
   onBack() {
     this.router.navigate(['home'], { relativeTo: this.route });
