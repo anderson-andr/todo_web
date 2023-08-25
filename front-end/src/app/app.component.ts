@@ -54,6 +54,7 @@ export class AppComponent implements OnInit {
     window.localStorage.removeItem(this.authService.USER_ID);
     window.localStorage.removeItem('projeto')
     window.localStorage.removeItem('Usuario')
+
   }
   onBack() {
     this.router.navigate(['home'], { relativeTo: this.route });
@@ -62,6 +63,8 @@ export class AppComponent implements OnInit {
   deslogar(){
     window.localStorage.removeItem(this.authService.TOKEN_NAME);
     window.localStorage.removeItem(this.authService.USER_ID);
+    window.localStorage.removeItem('projeto')
+    window.localStorage.removeItem('Usuario')
     this.router.navigate(['login'])
     console.log(this.onLogado())
 }
