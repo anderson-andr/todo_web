@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const data_source_1 = require("./data-source");
+const fs_1 = __importDefault(require("fs"));
 const https_1 = __importDefault(require("https"));
 const cors_1 = __importDefault(require("cors"));
 data_source_1.AppDataSource.initialize().then(() => __awaiter(void 0, void 0, void 0, function* () {
@@ -39,4 +40,6 @@ app.use('/api/task', task_1.default);
 app.listen(port, () => {
     console.log("Iniciando na porta " + port);
 });
-https_1.default.createServer({}, app).listen(3001, () => console.log("rodando em https"));
+https_1.default.createServer({
+    cert: fs_1.default.readFileSync('src/ssl/code.crt'),
+}, app).listen(3001, () => console.log("rodando em https"));

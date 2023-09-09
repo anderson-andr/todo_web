@@ -29,7 +29,6 @@ class TaskController {
                 !tarefaRequest.description ||
                 !tarefaRequest.id_project ||
                 !tarefaRequest.deadline ||
-                !tarefaRequest.completed ||
                 !tarefaRequest.notes) {
                 return res.status(400).json({
                     Erro: "Todos os dados são Obrigatórios",
@@ -72,7 +71,6 @@ class TaskController {
                 !tarefaRequest.name ||
                 !tarefaRequest.description ||
                 !tarefaRequest.deadline ||
-                !tarefaRequest.completed ||
                 !tarefaRequest.notes) {
                 return res.status(400).json({
                     Erro: "Todos os dados são obrigatorios",
