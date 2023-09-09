@@ -9,7 +9,7 @@ import { Task } from '../model/task';
 })
 export class TaskService {
 
-  private readonly API = 'http://18.230.156.247:3000/api/Task';
+  private readonly API = 'https://18.230.156.247:3001/api/Task';
   constructor(
     private httpClient: HttpClient,
     private authservice: AuthService

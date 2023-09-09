@@ -7,7 +7,7 @@ import { Project } from '../model/project';
   providedIn: 'root'
 })
 export class ProjectService {
-  private readonly API = 'http://18.230.156.247:3000/api/project';
+  private readonly API = 'https://18.230.156.247:3001/api/project';
   constructor(
     private httpClient: HttpClient,
     private authservice: AuthService
