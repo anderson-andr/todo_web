@@ -33,6 +33,7 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.use('/api/login', rotaLogin);
+
 app.use('/api/register' , rotaRegister);
 app.use(loginMiddleware.validaToken);
 app.use('/api/user', rotaUser);

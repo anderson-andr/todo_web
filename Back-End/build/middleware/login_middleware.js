@@ -7,14 +7,14 @@ exports.validaToken = (req, res, next) => {
     //se  existe o  token --> 
     //jwt.verify com a senha de acesso ('Sen@crs') retorna  err ou payload
     // err --> retorna 401 
-    if (!token) {
-        res.status(401).json({ erro: "Token Invalido" });
+    if (token =="null") {
+        res.status(401).json({ erro: "Token não encontrado" });
     }
     // payload --> next();
     else {
         jwt.verify(token, 'Todo@App', (err, payload) => {
             if (err) {
-                res.status(401).json({ erro: "Token Invalido" });
+                res.status(401).json({ erro: "Token Invalido " });
             }
             else {
                 console.log("Payload: ", JSON.stringify(payload));
