@@ -55,7 +55,7 @@ export class ProjetoFormComponent implements OnInit {
       createdAt:createdAt,
       updatedAt:updatedAt,
     })
-      console.log('ID do projeto:', projeto[0].id)
+      
   }
 
   onSubmit (){

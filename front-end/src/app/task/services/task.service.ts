@@ -21,7 +21,6 @@ export class TaskService {
       .pipe(
         first(),
         tap((Task) => {
-          console.log(Task);
         })
       );
   }
@@ -31,7 +30,6 @@ export class TaskService {
       .pipe(
         first(),
         tap((Task) => {
-          console.log(Task);
         })
       );
   }

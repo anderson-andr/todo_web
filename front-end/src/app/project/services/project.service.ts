@@ -19,7 +19,7 @@ export class ProjectService {
       .pipe(
         first(),
         tap((Project) => {
-          console.log(Project);
+
         })
       );
   }
@@ -29,7 +29,7 @@ export class ProjectService {
       .pipe(
         first(),
         tap((Project) => {
-          console.log(Project);
+          
         })
       );
   }

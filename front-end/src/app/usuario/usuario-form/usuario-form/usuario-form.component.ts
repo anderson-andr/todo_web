@@ -39,7 +39,7 @@ export class UsuarioFormComponent   implements OnInit {
         name:usuario.name,
         email:usuario.email,
       })
-      console.log(usuario)
+     
   }
 
   onSubmit (){

@@ -42,15 +42,12 @@ export class AuthService {
   login(email: string, password: string) {
     return this.apiService.login(email, password).pipe(
       tap((response) => {
-        console.log(response)
         this._isLoggedIn$.next(true);
         let token = JSON.parse(JSON.stringify(response)).token.split(' ')[0];
         console.log(token)
         let user =JSON.parse(JSON.stringify(response)).user;
         window.localStorage.setItem(this.TOKEN_NAME, token)
         window.localStorage.setItem(this.USER_ID,user)
-        console.log( window.localStorage.getItem(this.TOKEN_NAME))
-
 
 
 

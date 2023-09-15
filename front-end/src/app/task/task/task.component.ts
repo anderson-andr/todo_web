@@ -72,7 +72,7 @@ export class TaskComponent implements OnInit {
   onDelete(task: Task) {
       this.taskService.delete(task).subscribe(data => {
         this.tasks = this.tasks.filter( response => response !==task)
-        alert("task Deletado");
+        alert("Tarefa Deletada");
         this.refresh();
       })
   }

@@ -56,8 +56,8 @@ export class TaskFormComponent implements OnInit{
         id:this.task.id,
         name:this.task.name,
         description:this.task.description,
-        createdAt:this.task.createdAt,
-        updatedAt:this.task.updatedAt,
+        createdAt:new DatePipe('en-US').transform(this.task.createdAt, 'dd/MM/yyyy HH:mm:ss'),
+        updatedAt:new DatePipe('en-US').transform(this.task.updatedAt, 'dd/MM/yyyy HH:mm:ss'),
         notes:this.task.notes,
         completed:this.task.completed,
         deadline:this.task.deadline,
@@ -65,7 +65,7 @@ export class TaskFormComponent implements OnInit{
 
 
       })
-      console.log('ID do tarefa:', this.task.id)
+
       if (this.task.completed) {
         this.isChecked = this.task.completed;
       }

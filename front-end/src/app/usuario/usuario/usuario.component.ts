@@ -49,7 +49,7 @@ export class UsuarioComponent  implements  OnInit  {
   ngOnInit(): void {
     this.usuario.list().subscribe(res => {
       this.Usuario = res;
-      console.log(this.Usuario)
+      
 
     })
     this.app.isConta = false;

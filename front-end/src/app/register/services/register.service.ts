@@ -22,7 +22,7 @@ export class RegisterService {
     save(record:Usuario) {
       console.log(record)
       return this.httpClient.post <Usuario>(this.API, record).pipe(first())
-     console.log(record)
+    
     }
 
 }
