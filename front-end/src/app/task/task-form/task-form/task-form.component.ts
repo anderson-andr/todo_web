@@ -50,17 +50,21 @@ export class TaskFormComponent implements OnInit{
   ngOnInit() {
     this.task = this.route.snapshot.data['tarefa'];
     const projeto = window.localStorage.getItem('projeto')
+
     // Acesse as propriedades de this.task
     if (this.task) {
+    const createdAt = new DatePipe('en-US').transform(this.task.createdAt, 'dd/MM/yyyy HH:mm:ss');
+    const updatedAt = new DatePipe('en-US').transform(this.task.updatedAt, 'dd/MM/yyyy HH:mm:ss');
+    const  dealineAt = new DatePipe('en-US').transform(this.task.deadline, 'dd/MM/yyyy HH:mm:ss');
       this.form.setValue ({
         id:this.task.id,
         name:this.task.name,
         description:this.task.description,
-        createdAt:new DatePipe('en-US').transform(this.task.createdAt, 'dd/MM/yyyy HH:mm:ss'),
-        updatedAt:new DatePipe('en-US').transform(this.task.updatedAt, 'dd/MM/yyyy HH:mm:ss'),
+        createdAt:createdAt,
+        updatedAt:updatedAt,
         notes:this.task.notes,
         completed:this.task.completed,
-        deadline:this.task.deadline,
+        deadline:dealineAt,
         id_project :projeto
 
 

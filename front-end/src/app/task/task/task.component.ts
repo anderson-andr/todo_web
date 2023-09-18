@@ -79,7 +79,8 @@ export class TaskComponent implements OnInit {
 
   isPrazoEsgotado(prazo: Date): boolean {
     const dataAtual = new Date();
-    return dataAtual >= prazo;
+    return dataAtual <= prazo;
+
   }
 
   onback () {

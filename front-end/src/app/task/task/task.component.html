@@ -31,10 +31,11 @@
         <ng-container matColumnDef="vencido" >
           <th mat-header-cell *matHeaderCellDef> Vencido</th>
           <td mat-cell *matCellDef="let tarefas">
-            <span *ngIf="isPrazoEsgotado(tarefas.dealine)" class="completo">Sim</span>
-            <span *ngIf="!isPrazoEsgotado(tarefas.dealine)"  class="completo">Não</span>
+            <span *ngIf="isPrazoEsgotado(tarefas.deadline )" class="completo">Sim {{tarefas.deadline }}</span>
+            <span *ngIf="!isPrazoEsgotado(tarefas.deadline )"  class="completo">Não {{tarefas.deadline }}</span>
           </td>
-        </ng-container >
+        </ng-container > 
+
         <ng-container matColumnDef="createdAt" >
           <th mat-header-cell *matHeaderCellDef> Criação</th>
           <td mat-cell *matCellDef="let tarefas"> {{tarefas.createdAt | date: 'dd/MM/yyyy HH:mm:ss'}} </td>
